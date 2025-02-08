@@ -48,13 +48,13 @@ export function LoginForm({
     console.log(values.email, values.password);
 
     if (isLogin) {
-      signIn.mutateAsync(values).then((response) => {
+      signIn.mutateAsync({ ...values, name: "mamad" }).then((response) => {
         console.log({ response });
 
         toast("success signin");
       });
     } else {
-      signUp.mutateAsync(values).then((response) => {
+      signUp.mutateAsync({ ...values, name: "mamad" }).then((response) => {
         console.log({ response });
 
         toast("success signup");
